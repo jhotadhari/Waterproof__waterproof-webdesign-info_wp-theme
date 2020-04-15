@@ -1,0 +1,17 @@
+
+.watp-flex-row,
+.watp-flex-row-field .components-base-control__field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.watp-flex-row {
+    margin: 0.5em 0;
+}
+
+.watp-flex-row-field {
+    .components-base-control__label {
+        margin-bottom: 0;
+    }
+}

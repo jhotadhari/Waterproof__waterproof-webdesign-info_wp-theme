@@ -1,0 +1,21 @@
+/**
+ * Editor sidebar styles Waterproof__waterproof-webdesign-info_wp-theme
+ *
+ * @package  Waterproof__waterproof-webdesign-info_wp-theme
+ */
+
+/**
+* Example bootstrap for custom block inspectors
+*
+* Load some Bootstrap into .watp-post-setting-row class
+.edit-post-sidebar {
+
+    .watp-post-setting-row {
+
+        @import "~bootstrap/scss/grid";
+        @import "~bootstrap/scss/utilities";
+
+        // ...
+    }
+}
+*/

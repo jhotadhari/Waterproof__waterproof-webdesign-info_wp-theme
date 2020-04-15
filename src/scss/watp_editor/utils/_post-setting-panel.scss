@@ -1,0 +1,8 @@
+
+
+.components-panel__row.watp-post-setting-row {
+    display: block;
+    & > * {
+        margin-top: 1em;
+    }
+}

@@ -1,0 +1,38 @@
+/**
+ * Editor styles  Waterproof__waterproof-webdesign-info_wp-theme
+ *
+ * This file will start the setup, imports
+ *      - font-faces,
+ *      - variables,
+ *      - bootstrap base, not the entire bootstrap setup,
+ * and then imports styles for the different editor elements, which contains rest of the setup.
+ *
+ * Half of the setup moved into this files.
+ * This way we can import `frontend_master` in admin into '.editor-styles-wrapper'.
+ * To make this work, several css at-rules (@font-face, @page, ...) have to be imported on root level.
+ * This rules can't be nested (node-sass excepts it, but css-purge breaks).
+ *
+ * @package  Waterproof__waterproof-webdesign-info_wp-theme
+ */
+
+// Load font_faces
+@import "watp_frontend/fonts/fonts_master";
+
+// Load and overwrite Bootstrap variables
+@import "watp_frontend/variables_site/variables_bootstrap";
+
+// Loads Bootstrap4 base
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+// no bootstrap reboot - has to be on editor-styles-wrapper level
+// no bootstrap print
+// no bootstrap code
+
+@import "watp_editor/utils/**/*";
+
+// Editor elements
+@import "watp_editor/editor_styles_wrapper";
+@import "watp_editor/sidebar";
+@import "watp_editor/metabox";
