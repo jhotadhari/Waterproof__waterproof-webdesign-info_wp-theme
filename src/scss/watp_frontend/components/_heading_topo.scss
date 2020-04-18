@@ -1,0 +1,52 @@
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    // fix block aligns
+    &.wp-block-heading.alignwide,
+    &.wp-block-heading.alignfull {
+        left: 0;
+    }
+
+    &.topo {
+
+        background-image: url('../images/topographic_heading.png');
+        position: relative;
+
+        background-size: cover;
+        background-position: 50% 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: map-get( $spacers, 3 );
+        margin-left: 50%;
+        min-width: 100%;
+        height: 400px;
+        font-size: 2.75em;
+
+        transform: translateX(-50%);
+
+        &.thin {
+            height: 120px;
+            background-position: 50% 70%;
+            @media (max-width: 399px) {
+                background-size: 150% 150%;
+            }
+            @media (max-width: 499px) {
+                background-size: 130% 150%;
+            }
+        }
+
+    }
+}
+
+
+
+
+
