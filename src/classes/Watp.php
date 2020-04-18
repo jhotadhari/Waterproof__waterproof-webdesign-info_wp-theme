@@ -21,6 +21,10 @@ class Watp extends wde\Theme {
 
 		// add_action( 'init', array( $this, 'do_something_on_init' ), 10 );
 
+		if ( ! is_admin() ) {
+			Wpseo_Breadcrumb_Customize::get_instance();
+		}
+
 		add_action( 'current_screen', array( $this, 'enqueue_style_editor' ), 10 );
 	}
 

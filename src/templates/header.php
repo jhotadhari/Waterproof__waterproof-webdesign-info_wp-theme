@@ -96,14 +96,20 @@ $header_image_class = 'header-image';
 
 		<div
 			id="wrapper-header-meta"
-			class="header-meta bg-primary p-2"
+			class="header-meta bg-primary py-4"
 		>
-			<div
-				class="d-flex <?php echo 'container' === $container ? 'container' : ''; ?>"
-			>
-				<?php echo get_search_form( true ); ?>
-			</div>
+			<?php if ( function_exists( 'yoast_breadcrumb' ) ) : ?>
+				<nav
+					class="<?php echo 'container' === $container ? 'container' : ''; ?>"
+					aria-label="breadcrumb"
+				>
+					<?php yoast_breadcrumb(); ?>
+				</nav>
+			<?php endif; ?>
 		</div>
 
-
 	</header>
+
+	<?php
+		// echo get_search_form( true );
+	?>
