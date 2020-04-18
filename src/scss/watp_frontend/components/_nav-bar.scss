@@ -91,9 +91,57 @@ $navbar_expand_bp: md;
         flex-basis: 100%;
     }
 
-    &-toggler {
+    &-controls {
         width: 100%;
         flex-basis: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .lang-switch {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            padding-right: $navbar-nav-link-padding-x;
+            padding-left: 0;
+            align-items: center;
+
+            @include media-breakpoint-up( $navbar_expand_bp ) {
+                margin-top: -1rem;
+                padding-left: 2 * $navbar-nav-link-padding-x;
+            }
+
+            .lang-item {
+                display: inline-flex;
+                &:after {
+                    content: ' | ';
+                    display: inline-block;
+                    padding-right: 0.25rem;
+                    padding-left: 0.25rem;
+                    color: $navbar-dark-color;
+                }
+                &:last-child:after {
+                    content: '';
+                }
+
+                &, a {
+                    color: $navbar-dark-color;
+                }
+                &.current-lang {
+                    &, a {
+                        color: $navbar-dark-active-color;
+                    }
+                }
+            }
+
+        }
+
+        @include media-breakpoint-up( $navbar_expand_bp ) {
+            order: 1;
+            width: auto;
+            flex-basis: auto;
+        }
     }
 
     &-collapse {    // ul wrapper

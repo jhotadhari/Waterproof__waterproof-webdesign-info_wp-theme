@@ -70,9 +70,18 @@ $header_image_class = 'header-image';
 					<?php endif; ?><!-- end custom logo -->
 
 
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'watp' ); ?>">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+					<div class="navbar-controls">
+
+						<ul class="lang-switch">
+							<?php pll_the_languages( array(
+								'display_names_as'	=> 'slug',
+							) ); ?>
+						</ul>
+
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'watp' ); ?>">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+					</div>
 
 					<!-- The WordPress Menu goes here -->
 					<?php wp_nav_menu(
