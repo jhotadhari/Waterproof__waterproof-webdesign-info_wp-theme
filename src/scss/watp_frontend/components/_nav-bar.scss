@@ -147,6 +147,7 @@ $navbar_expand_bp: md;
     &-collapse {    // ul wrapper
         position: relative;
         margin-top: 0;
+        width: 100%;
         @include media-breakpoint-up( $navbar_expand_bp ) {
             margin-top: -1rem;
             flex-direction: row;

@@ -40,4 +40,11 @@ body {
     position: relative;
 }
 
+#main {
+    &,
+    & > #content {
+        outline: none;
+    }
+}
+
 @import "watp_frontend/frontend_master";

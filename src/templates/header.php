@@ -31,7 +31,7 @@ $header_image_class = 'header-image';
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
-	<header>
+	<header class="mb-4">
 
 		<div
 			id="wrapper-header-image"
