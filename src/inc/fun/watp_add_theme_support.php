@@ -273,7 +273,7 @@ if ( ! function_exists ( 'watp_add_theme_support' ) ) {
 				array(
 					'default-image' => watp\Watp::get_instance()->dir_url . '/images/header.jpg',
 					'width'         => 2000,
-					'height'        => 300,
+					'height'        => 400,
 					'flex-height'   => true,
 					'header-text'	=> false,
 				)

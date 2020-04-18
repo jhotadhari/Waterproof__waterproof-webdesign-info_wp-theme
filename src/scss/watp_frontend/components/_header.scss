@@ -1,11 +1,45 @@
+
 #wrapper-header-image {
     position: relative;
+    overflow: hidden;
+    height: 450px;
 
     .header-image {
+        height: auto;
         width: 100%;
+        min-height: 33%;
+        min-width: 100%;
         object-fit: cover;
     }
+
+    .header-image-overlay {
+        position: absolute;
+        width: 100%;
+
+        $overlay_top: 2rem;
+        height: calc( 100% - #{ $overlay_top });
+        top: $overlay_top;
+
+        & > div {
+            position: absolute;
+            background-repeat: repeat-x;
+            width: 100%;
+            height: 100%;
+        }
+
+        &-mountains {
+            background-image: url('../images/mountains.svg');
+            background-size: auto 100%;
+            background-position: center top;
+        }
+        &-trees {
+            background-image: url('../images/trees.svg');
+            background-size: auto;
+            background-position: center bottom;
+        }
+    }
 }
+
 
 .wpseo-breadcrumbs {
 
@@ -46,3 +80,7 @@
     }
 
 }
+
+
+
+

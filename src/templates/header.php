@@ -33,17 +33,34 @@ $header_image_class = 'header-image';
 
 	<header>
 
+		<div
+			id="wrapper-header-image"
+		>
+			<div class="header-image-overlay">
+				<div class="header-image-overlay-mountains"></div>
+				<div class="header-image-overlay-trees"></div>
+			</div>
+
+			<?php if ( has_custom_header() ) : ?>
+				<img
+					class="<?php echo $header_image_class; ?>"
+					src="<?php header_image(); ?>"
+					height="<?php echo $header_height; ?>"
+					width="<?php echo $header_width; ?>"
+					alt=""
+				/>
+			<?php endif; ?>
+
+		</div><!-- #wrapper-header-image end -->
+
 		<div id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
 
 			<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'watp' ); ?></a>
 
-			<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+			<nav class="navbar navbar-expand-md navbar-dark">
 
-				<div class="<?php echo 'container' === $container ? 'container' : 'd-flex'; ?> flex-row-reverse w-100">
+				<div class="<?php echo 'container' === $container ? 'container' : 'd-flex'; ?> w-100">
 
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'watp' ); ?>">
-						<span class="navbar-toggler-icon"></span>
-					</button>
 
 					<!-- Your site title as branding in the menu -->
 					<?php if ( has_custom_logo() ) : ?>
@@ -51,6 +68,11 @@ $header_image_class = 'header-image';
 					<?php else : ?>
 						<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
 					<?php endif; ?><!-- end custom logo -->
+
+
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'watp' ); ?>">
+						<span class="navbar-toggler-icon"></span>
+					</button>
 
 					<!-- The WordPress Menu goes here -->
 					<?php wp_nav_menu(
@@ -73,39 +95,15 @@ $header_image_class = 'header-image';
 		</div><!-- #wrapper-navbar end -->
 
 		<div
-			id="wrapper-header-image"
-			class="<?php echo 'container' === $container ? 'container' : ''; ?>"
-			style="height: <?php echo $header_height; ?>px"
-		>
-
-			<?php if ( has_custom_header() ) : ?>
-				<img
-					class="<?php echo $header_image_class; ?>"
-					src="<?php header_image(); ?>"
-					height="<?php echo $header_height; ?>"
-					width="<?php echo $header_width; ?>"
-					alt=""
-					style="height: <?php echo $header_height; ?>px"
-				/>
-			<?php endif; ?>
-
-			<?php if ( function_exists( 'yoast_breadcrumb' ) ) : ?>
-				<div class="wpseo-breadcrumbs">
-					<?php yoast_breadcrumb(); ?>
-				</div>
-			<?php endif; ?>
-
-		</div><!-- #wrapper-header-image end -->
-
-		<div
 			id="wrapper-header-meta"
-			class="header-meta p-2"
+			class="header-meta bg-primary p-2"
 		>
 			<div
 				class="d-flex <?php echo 'container' === $container ? 'container' : ''; ?>"
 			>
 				<?php echo get_search_form( true ); ?>
-			</div><!-- .row end -->
-		</div><!-- .row end -->
+			</div>
+		</div>
+
 
 	</header>
