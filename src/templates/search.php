@@ -20,20 +20,6 @@ $container = get_theme_mod( 'watp_container_type' );
 
 		<?php if ( have_posts() ) : ?>
 
-			<div class="page-header">
-
-				<h1 class="page-title">
-					<?php
-					printf(
-						/* translators: %s: query term */
-						esc_html__( 'Search Results for: %s', 'watp' ),
-						'<span>' . get_search_query() . '</span>'
-					);
-					?>
-				</h1>
-
-			</div><!-- .page-header -->
-
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
