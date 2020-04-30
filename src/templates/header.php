@@ -17,6 +17,11 @@ $custom_header = get_custom_header();
 $header_width = $custom_header && property_exists( $custom_header, 'width' ) ? $custom_header->width : 1200;
 $header_height = $custom_header && property_exists( $custom_header, 'height' ) ? $custom_header->height : 400;
 $header_image_class = 'header-image';
+
+// plugin support rain-effect
+$header_is_rain = class_exists( 'rain\Rain_Customizer' ) && rain\Rain_Customizer::get_instance()->get_options()['header_is_rain'];
+$header_image_class .= $header_is_rain ? ' rain-effect' : '';
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -31,17 +36,30 @@ $header_image_class = 'header-image';
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
-	<header class="mb-4">
+	<header class="mb-4 bg-primary">
 
 		<div
 			id="wrapper-header-image"
 		>
+
+
 			<div class="header-image-overlay">
 				<div class="header-image-overlay-mountains"></div>
 				<div class="header-image-overlay-trees"></div>
 			</div>
 
+			<?php if ( has_custom_header() && $header_is_rain ) : /* prevent flickering while rain loads */ ?>
+				<img
+					class="<?php echo $header_image_class . ' no-rain position-absolute'; ?>"
+					src="<?php header_image(); ?>"
+					height="<?php echo $header_height; ?>"
+					width="<?php echo $header_width; ?>"
+					alt=""
+				/>
+			<?php endif; ?>
+
 			<?php if ( has_custom_header() ) : ?>
+
 				<img
 					class="<?php echo $header_image_class; ?>"
 					src="<?php header_image(); ?>"
