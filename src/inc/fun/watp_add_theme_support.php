@@ -36,9 +36,12 @@ if ( ! function_exists ( 'watp_add_theme_support' ) ) {
 		 */
 		add_theme_support( 'title-tag' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'watp' ),
+		) );
+		register_nav_menus( array(
+			'footer' => __( 'Footer Menu', 'watp' ),
 		) );
 
 		/*

@@ -12,15 +12,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $container = get_theme_mod( 'watp_container_type' );
+$container = strlen( $container ) > 0 ? $container . '-fluid' : '';
 ?>
 
-<footer id="colophon" class="site-footer <?php echo esc_attr( $container ); ?>">
+<footer id="colophon" class="site-footer">
+	<div class="site-footer-inner <?php echo esc_attr( $container ); ?>">
 
-	<div class="site-info">
+		<?php if ( has_nav_menu( 'footer' ) ) : ?>
+			<nav class="footer-navigation">
+			<?php wp_nav_menu( array(
+				'theme_location' => 'footer',
+				'depth'          => 1,
+				'fallback_cb'    => false
+			) ); ?>
+			</nav><!-- .footer-navigation -->
+		<?php endif; ?>
 
-		<?php watp_site_info(); ?>
-
-	</div><!-- .site-info -->
+		<div class="site-info">
+			<?php watp_site_info(); ?>
+		</div><!-- .site-info -->
+	</div>
 
 </footer><!-- #colophon -->
 
