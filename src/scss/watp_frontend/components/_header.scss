@@ -1,8 +1,21 @@
 
+header {
+    & > * {
+        z-index: 0;
+        position: relative;
+    }
+}
+
+
 #wrapper-header-image {
     position: relative;
     overflow: hidden;
     height: 450px;
+
+    & > * {
+        z-index: 0;
+        position: relative;
+    }
 
     .header-image {
         height: auto;
@@ -15,6 +28,7 @@
     .header-image-overlay {
         position: absolute;
         width: 100%;
+        z-index: 1;
 
         $overlay_top: 2rem;
         height: calc( 100% - #{ $overlay_top });
@@ -33,9 +47,8 @@
             background-position: center top;
         }
         &-trees {
-            background-image: url('../images/trees.svg');
-            background-size: auto;
-            background-position: center bottom;
+            background-image: url('../images/trees_repeat_tri.png');
+            background-size: auto 100%;;
         }
     }
 }

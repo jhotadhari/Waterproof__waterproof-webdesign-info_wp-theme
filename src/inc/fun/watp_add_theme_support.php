@@ -271,7 +271,7 @@ if ( ! function_exists ( 'watp_add_theme_support' ) ) {
 			apply_filters(
 				'watp_custom_header_args',
 				array(
-					'default-image' => watp\Watp::get_instance()->dir_url . '/images/header.jpg',
+					'default-image' => watp\Watp::get_instance()->dir_url . '/images/header.png',
 					'width'         => 2000,
 					'height'        => 400,
 					'flex-height'   => true,
@@ -283,8 +283,8 @@ if ( ! function_exists ( 'watp_add_theme_support' ) ) {
 		register_default_headers(
 			array(
 				'default-image' => array(
-					'url'           => '%s/images/header.jpg',
-					'thumbnail_url' => '%s/images/header.jpg',
+					'url'           => '%s/images/header.png',
+					'thumbnail_url' => '%s/images/header.png',
 					'description'   => __( 'Default Header Image', 'watp' ),
 				),
 			)

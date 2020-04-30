@@ -52,6 +52,10 @@ $navbar_expand_bp: md;
 
 .navbar {
 
+    a, a:hover {
+        text-decoration: none;
+    }
+
     & > .container {
         flex-direction: column;
         @include media-breakpoint-up( $navbar_expand_bp ) {
@@ -83,6 +87,15 @@ $navbar_expand_bp: md;
             position: absolute;
             left: 0;
             bottom: 0;
+
+
+            // custom fix waterproof logo position
+            @include media-breakpoint-only( sm ) {
+                margin-left: 5px;
+            }
+            @include media-breakpoint-up( $navbar_expand_bp ) {
+                left: -22px;
+            }
         }
     }
 
@@ -103,8 +116,8 @@ $navbar_expand_bp: md;
             padding: 0;
             margin: 0;
             display: flex;
-            padding-right: $navbar-nav-link-padding-x;
-            padding-left: 0;
+            // padding-right: $navbar-nav-link-padding-x;
+            // padding-left: 0;
             align-items: center;
 
             @include media-breakpoint-up( $navbar_expand_bp ) {
@@ -123,6 +136,9 @@ $navbar_expand_bp: md;
                 }
                 &:last-child:after {
                     content: '';
+                    @include media-breakpoint-up( $navbar_expand_bp ) {
+                        padding: 0;
+                    }
                 }
 
                 &, a {
@@ -166,4 +182,16 @@ $navbar_expand_bp: md;
         }
     }
 
+    // fix fluch
+    &-controls,
+    &-collapse {
+        @include media-breakpoint-up( sm ) {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        @include media-breakpoint-up($navbar_expand_bp) {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
 }
