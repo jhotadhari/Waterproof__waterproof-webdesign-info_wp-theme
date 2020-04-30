@@ -64,7 +64,6 @@ $navbar_expand_bp: md;
     }
 
     &-brand {
-        flex-basis: 150px;
         text-align: left;
         position: relative;
         height: 0;
@@ -74,20 +73,12 @@ $navbar_expand_bp: md;
 
         @include media-breakpoint-up( $navbar_expand_bp ) {
             margin-bottom: 0;
-            flex-basis: 66%;
-        }
-        @include media-breakpoint-up( lg ) {
-            flex-basis: 50%;
-        }
-        @include media-breakpoint-up( xl ) {
-            flex-basis: 30%;
         }
 
         & > img {
             position: absolute;
             left: 0;
             bottom: 0;
-
 
             // custom fix waterproof logo position
             @include media-breakpoint-only( sm ) {
