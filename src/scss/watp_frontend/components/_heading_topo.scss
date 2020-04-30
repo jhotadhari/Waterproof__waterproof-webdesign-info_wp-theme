@@ -6,47 +6,63 @@ h4,
 h5,
 h6 {
 
-    // fix block aligns
-    &.wp-block-heading.alignwide,
-    &.wp-block-heading.alignfull {
-        left: 0;
-    }
-
-    &.topo {
-
-        background-image: url('../images/topographic_heading.png');
+    &.wp-block-heading-topo {
         position: relative;
-
-        background-size: cover;
-        background-position: 50% 50%;
+        min-width: 66%;
 
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
+
+        transform: translateX(-50%) !important;     // actually !important should only in editor
+        margin-left: 50% !important;                // actually !important should only in editor
 
         margin-bottom: map-get( $spacers, 3 );
-        margin-left: 50%;
-        min-width: 100%;
-        height: 400px;
-        font-size: 2.75em;
+        @include font-size($h1-font-size);
 
-        transform: translateX(-50%);
 
-        &.thin {
-            height: 120px;
-            background-position: 50% 70%;
-            @media (max-width: 399px) {
-                background-size: 150% 150%;
+        // fix block aligns
+        &.alignwide,
+        &.alignfull {
+            left: 0;
+        }
+
+        &:before {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            content: '';
+            background-image: url('../images/htag_bg.svg');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        &:nth-of-type(2n+1) {
+            &:before {
+                transform: scaleX(-1);
             }
-            @media (max-width: 499px) {
-                background-size: 130% 150%;
+        }
+
+        height: 250px;
+        &.thin {
+            height: 175px;
+        }
+        &.large {
+            height: 350px;
+        }
+
+        transition: font-weight 0.3s, color 0.3s;
+        &:before {
+            filter: none;
+            transition: filter 0.3s;
+        }
+        &:hover {
+            color: $primary;
+            &:before {
+                filter: $filter_dark;
             }
         }
 
     }
 }
-
-
-
-
-
