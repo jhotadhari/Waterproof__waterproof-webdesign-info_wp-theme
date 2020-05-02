@@ -121,3 +121,31 @@ ul {
     }
 }
 
+
+/**
+ * Cookie Notice for GDPR & CCPA
+ */
+.cn-button.bootstrap {
+    @extend .btn;
+    @extend .btn-primary;
+    border: none;
+}
+#cookie-notice {
+    font-family: $font-family-base;
+    @include font-size(90%);    // small
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    background-color: transparentize( $primary, 0 ) !important;
+    .cn-button {
+        @extend .btn;
+        @extend .btn-dark;
+        &:hover {
+            background-color: transparentize( $dark, 0.3 );
+        }
+    }
+}
+.cn-revoke-cookie {
+    float: right;
+}
+
