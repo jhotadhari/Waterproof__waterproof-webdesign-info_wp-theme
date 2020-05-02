@@ -26,6 +26,11 @@ if ( ! function_exists( 'watp_body_classes' ) ) {
 			$classes[] = 'hfeed';
 		}
 
+		if ( function_exists( 'pll_current_language' ) ){
+			$lang = pll_current_language( 'locale' );
+			$classes[] = 'lang-' . $lang;
+		}
+
 		return $classes;
 	}
 }
