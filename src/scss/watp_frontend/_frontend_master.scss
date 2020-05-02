@@ -12,34 +12,34 @@
  */
 
 @import "~bootstrap/scss/type";
-@import "~bootstrap/scss/images";
+// @import "~bootstrap/scss/images";
 @import "~bootstrap/scss/grid";
-@import "~bootstrap/scss/tables";
+// @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/forms";
 @import "~bootstrap/scss/buttons";
 @import "~bootstrap/scss/transitions";
-@import "~bootstrap/scss/dropdown";
-@import "~bootstrap/scss/button-group";
-@import "~bootstrap/scss/input-group";
-@import "~bootstrap/scss/custom-forms";
+// @import "~bootstrap/scss/dropdown";
+// @import "~bootstrap/scss/button-group";
+// @import "~bootstrap/scss/input-group";
+// @import "~bootstrap/scss/custom-forms";
 @import "~bootstrap/scss/nav";
 @import "~bootstrap/scss/navbar";
-@import "~bootstrap/scss/card";
+// @import "~bootstrap/scss/card";
 @import "~bootstrap/scss/breadcrumb";
-@import "~bootstrap/scss/pagination";
-@import "~bootstrap/scss/badge";
-@import "~bootstrap/scss/jumbotron";
-@import "~bootstrap/scss/alert";
-@import "~bootstrap/scss/progress";
-@import "~bootstrap/scss/media";
-@import "~bootstrap/scss/list-group";
-@import "~bootstrap/scss/close";
-@import "~bootstrap/scss/toasts";
-@import "~bootstrap/scss/modal";
-@import "~bootstrap/scss/tooltip";
-@import "~bootstrap/scss/popover";
-@import "~bootstrap/scss/carousel";
-@import "~bootstrap/scss/spinners";
+// @import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/badge";
+// @import "~bootstrap/scss/jumbotron";
+// @import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/media";
+// @import "~bootstrap/scss/list-group";
+// @import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/toasts";
+// @import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+// @import "~bootstrap/scss/spinners";
 @import "~bootstrap/scss/utilities";
 
 
@@ -47,3 +47,105 @@
 @import './generic.scss';
 @import './understrap.scss';
 @import "./components/**/*.scss";
+
+/**
+ * More Typo
+ */
+b, strong {
+    color: $primary;
+}
+
+a {
+    font-weight: $font-weight-bolder;
+    transition: color ease 0.3s, text-decoration ease 0.3s;
+    &:hover {
+        color: $danger;
+        text-decoration: underline $danger;
+    }
+}
+.site-main a {
+    text-decoration: underline;
+}
+
+%icon-cc {
+    &:before {
+        @extend .fa;
+        content: $fa-var-cc-custom " " $fa-var-cc-by " " $fa-var-cc-nc " " $fa-var-cc-sa;
+        color: $body-color;
+        margin-right: map-get( $spacers, 1 );
+    }
+}
+.cc {
+    @extend %icon-cc;
+}
+
+
+/**
+ * Lists
+ */
+%icon-check {
+    &:before {
+        @extend .fa;
+        font-weight: 900;
+        content: $fa-var-check;
+        color: $primary;
+        display: inline-block;
+        margin-left: -1.3em; /* same as padding-left set on li */
+        width: 1.3em; /* same as padding-left set on li */
+    }
+}
+ul {
+    li {
+        margin-bottom: map-get( $spacers, 2 );
+    }
+
+    &.check {
+        list-style: none;
+        & > li {
+            @extend %icon-check;
+        }
+    }
+}
+
+
+/**
+ * Donate page, paypal button
+ */
+.paypal-donate {
+    margin-top: map-get( $spacers, 3 );
+    text-align: center;
+    & > * {
+        &:not([name="submit"]) {
+            display: none;
+        }
+    }
+}
+
+
+/**
+ * Cookie Notice for GDPR & CCPA
+ */
+.cn-button.bootstrap {
+    @extend .btn;
+    @extend .btn-primary;
+    border: none;
+}
+#cookie-notice {
+    font-family: $font-family-base;
+    @include font-size(90%);    // small
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    background-color: transparentize( $primary, 0 ) !important;
+    .cn-button {
+        @extend .btn;
+        @extend .btn-dark;
+        &:hover {
+            background-color: transparentize( $dark, 0.3 );
+        }
+    }
+}
+.cn-revoke-cookie {
+    float: right;
+}
+

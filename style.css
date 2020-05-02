@@ -1,0 +1,26 @@
+/*	
+	Theme Name: waterproof-webdesign Theme
+	Theme URI: https://github.com/jhotadhari/Waterproof__waterproof-webdesign-info_wp-theme
+	Description: Example Description
+	Version: 1.0.0
+	Author: jhotadhari
+	Author URI: https://github.com/jhotadhari
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+	Text Domain: watp
+	Domain Path: /languages
+	Tags: bootstrap
+	GitHub Theme URI: https://github.com/jhotadhari/Waterproof__waterproof-webdesign-info_wp-theme
+	Release Asset: true
+
+*/
+
+/*
+This file is just used to identify the theme in WordPress.
+The compiled CSS output can be found in /css/watp_frontend.min.css
+*/
+
+/**
+ * This is a dummy theme stylesheet, required by GitHub Updater Plugin (https://github.com/afragen/github-updater).
+ * GitHub Updater Plugin will query this file for updates.
+ */

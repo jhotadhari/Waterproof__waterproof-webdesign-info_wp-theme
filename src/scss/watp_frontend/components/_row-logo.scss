@@ -1,0 +1,18 @@
+
+.wp-block-wp-bootstrap-blocks-row,  // editor
+.wp-bootstrap-blocks-row {          // frontend
+    &.row-logo {
+        figure.wp-block-image {
+            filter: $filter_dark;
+            transition: filter 0.3s;
+            &:hover {
+                filter: none;
+            }
+            &:not(.block-editor-block-list__block) {
+                display: flex;
+                align-items: center;
+                height: 100%;
+            }
+        }
+    }
+}

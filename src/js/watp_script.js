@@ -21,7 +21,17 @@ import './watp_script/theme_support_align_full';
 
 $( document ).ready( function( $ ) {
 
-	// // log bootstrap carousel
-	// console.log( '$.fn.carousel', $.fn.carousel );
+	/**
+	 * Donate page, paypal button
+	 */
+	const $form = $( '.paypal-donate' ).first();
+	$form.prevAll( '.wp-block-cover' ).find( '.wp-block-cover__inner-container' ).append( $form );
+
+	/**
+	 * Cookie Notice for GDPR & CCPA
+	 * change revoke btn lang
+	 */
+	const str = 'Cookie-Zustimmung widerrufen';
+	$( '.lang-de_DE .cn-revoke-cookie' ).html( str ).prop( 'title', str );
 
 } );

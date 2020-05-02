@@ -1,2 +1,13 @@
 
 @import "./fontawesome";
+
+/* font faces -------------------- */
+
+@font-face {
+  font-family: 'GlacialIndifference';
+  src: url('../fonts/GlacialIndifference-Regular.eot');
+  src: url('../fonts/GlacialIndifference-Regular.woff2') format('woff2'),
+       url('../fonts/GlacialIndifference-Regular.woff') format('woff'),
+       url('../fonts/GlacialIndifference-Regular.ttf')  format('truetype'),
+       url('../fonts/GlacialIndifference-Regular.svg')  format('svg');
+}

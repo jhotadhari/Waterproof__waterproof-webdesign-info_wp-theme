@@ -19,7 +19,7 @@
 @import "watp_frontend/fonts/fonts_master";
 
 // Load and overwrite Bootstrap variables
-@import "watp_frontend/variables_site/variables_bootstrap";
+@import "watp_frontend/variables_site/variables_site";
 
 // Loads Bootstrap4 base
 @import "~bootstrap/scss/functions";
@@ -38,6 +38,13 @@ html, body {
 body {
     font-display: swap;
     position: relative;
+}
+
+#main {
+    &,
+    & > #content {
+        outline: none;
+    }
 }
 
 @import "watp_frontend/frontend_master";

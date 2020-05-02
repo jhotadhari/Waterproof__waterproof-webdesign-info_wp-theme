@@ -1,2 +1,17 @@
+/**
+ * Waterproof colors, just for reference
+ *
+ * Try to not use them directly.
+ * Assign to and use bootstrap variables.
+ */
+$watp_blue: #0073AA;
+$watp_light: #d7dade;
+$watp_trees_1: #95a3a6;
+$watp_trees_2: #7c8690;
+$watp_trees_3: #605d70;
+$watp_dark: #23282d;
 
 @import "./variables_bootstrap";
+
+// https://codepen.io/sosuke/pen/Pjoqqp
+$filter_dark: brightness(0) saturate(100%) invert(13%) sepia(17%) saturate(513%) hue-rotate(169deg) brightness(93%) contrast(91%);
