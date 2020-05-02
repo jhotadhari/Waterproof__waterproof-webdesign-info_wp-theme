@@ -42,10 +42,6 @@ msgid "Add a menu"
 msgstr ""
 
 #: ../templates/404.php:24
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: ../templates/404.php:30
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
@@ -91,17 +87,36 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../templates/header.php:38
+#: ../templates/footer.php:36
+msgid "%s – %s"
+msgstr ""
+
+#: ../templates/footer.php:40
+msgid "Creative Commons, Attribution (BY), Non-commercial (NC), Share-alike (SA), %s"
+msgstr ""
+
+#: ../templates/footer.php:51
+msgid "Theme: %1$s"
+msgstr ""
+
+#: ../templates/footer.php:56
+msgid "Version: %1$s"
+msgstr ""
+
+#: ../templates/footer.php:66
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: ../templates/footer.php:69
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: ../templates/header.php:76
 msgid "Skip to content"
 msgstr ""
 
-#: ../templates/header.php:44
+#: ../templates/header.php:99
 msgid "Toggle navigation"
-msgstr ""
-
-#. translators: %s: query term
-#: ../templates/search.php:29
-msgid "Search Results for: %s"
 msgstr ""
 
 #: ../templates/searchform.php:14, ../templates/searchform.php:20
@@ -116,99 +131,103 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:83
+#: ../inc/fun/watp_add_theme_support.php:44
+msgid "Footer Menu"
+msgstr ""
+
+#: ../inc/fun/watp_add_theme_support.php:86
 msgid "Primary"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:88
+#: ../inc/fun/watp_add_theme_support.php:91
 msgid "Secondary"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:94
+#: ../inc/fun/watp_add_theme_support.php:97
 msgid "Blue"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:99
+#: ../inc/fun/watp_add_theme_support.php:102
 msgid "Indigo"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:104
+#: ../inc/fun/watp_add_theme_support.php:107
 msgid "Purple"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:109
+#: ../inc/fun/watp_add_theme_support.php:112
 msgid "Pink"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:114
+#: ../inc/fun/watp_add_theme_support.php:117
 msgid "Red"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:119
+#: ../inc/fun/watp_add_theme_support.php:122
 msgid "Orange"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:124
+#: ../inc/fun/watp_add_theme_support.php:127
 msgid "Yellow"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:129
+#: ../inc/fun/watp_add_theme_support.php:132
 msgid "Green"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:134
+#: ../inc/fun/watp_add_theme_support.php:137
 msgid "Teal"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:139
+#: ../inc/fun/watp_add_theme_support.php:142
 msgid "Cyan"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:145
+#: ../inc/fun/watp_add_theme_support.php:148
 msgid "White"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:150
+#: ../inc/fun/watp_add_theme_support.php:153
 msgid "Gray 100"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:155
+#: ../inc/fun/watp_add_theme_support.php:158
 msgid "Gray 200"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:160
+#: ../inc/fun/watp_add_theme_support.php:163
 msgid "Gray 300"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:165
+#: ../inc/fun/watp_add_theme_support.php:168
 msgid "Gray 400"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:170
+#: ../inc/fun/watp_add_theme_support.php:173
 msgid "Gray 500"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:175
+#: ../inc/fun/watp_add_theme_support.php:178
 msgid "Gray 600"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:180
+#: ../inc/fun/watp_add_theme_support.php:183
 msgid "Gray 700"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:185
+#: ../inc/fun/watp_add_theme_support.php:188
 msgid "Gray 800"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:190
+#: ../inc/fun/watp_add_theme_support.php:193
 msgid "Gray 900"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:195
+#: ../inc/fun/watp_add_theme_support.php:198
 msgid "Black"
 msgstr ""
 
-#: ../inc/fun/watp_add_theme_support.php:288
+#: ../inc/fun/watp_add_theme_support.php:291
 msgid "Default Header Image"
 msgstr ""
 
@@ -297,22 +316,6 @@ msgctxt "Next post link"
 msgid "%title&nbsp;<i class=\"fa fa-angle-right\"></i>"
 msgstr ""
 
-#: ../inc/template_tags/watp_site_info.php:27
-msgid "http://wordpress.org/"
-msgstr ""
-
-#: ../inc/template_tags/watp_site_info.php:30
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: ../inc/template_tags/watp_site_info.php:35
-msgid "Theme: %1$s"
-msgstr ""
-
-#: ../inc/template_tags/watp_site_info.php:40
-msgid "Version: %1$s"
-msgstr ""
-
 #: ../template_parts/loop/content-none.php:19
 msgid "Nothing Found"
 msgstr ""
@@ -321,10 +324,10 @@ msgstr ""
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: ../template_parts/loop/content-page.php:30, ../template_parts/loop/content-single.php:36, ../template_parts/loop/content.php:43
+#: ../template_parts/loop/content-page.php:26, ../template_parts/loop/content-single.php:26, ../template_parts/loop/content.php:43
 msgid "Pages:"
 msgstr ""
 
-#: ../template_parts/loop/content-page.php:40
+#: ../template_parts/loop/content-page.php:36
 msgid "Edit"
 msgstr ""
