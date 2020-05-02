@@ -22,6 +22,7 @@ class Watp extends wde\Theme {
 		// add_action( 'init', array( $this, 'do_something_on_init' ), 10 );
 
 		if ( ! is_admin() ) {
+			Wpcf7_Maybe_Load_Assets::get_instance();
 			Wpseo_Breadcrumb_Customize::get_instance();
 		}
 
