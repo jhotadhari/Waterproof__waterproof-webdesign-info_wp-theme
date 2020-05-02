@@ -108,3 +108,16 @@ ul {
 }
 
 
+/**
+ * Donate page, paypal button
+ */
+.paypal-donate {
+    margin-top: map-get( $spacers, 3 );
+    text-align: center;
+    & > * {
+        &:not([name="submit"]) {
+            display: none;
+        }
+    }
+}
+

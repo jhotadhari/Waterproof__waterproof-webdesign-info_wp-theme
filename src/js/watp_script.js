@@ -21,7 +21,10 @@ import './watp_script/theme_support_align_full';
 
 $( document ).ready( function( $ ) {
 
-	// // log bootstrap carousel
-	// console.log( '$.fn.carousel', $.fn.carousel );
+	/**
+	 * Donate page, paypal button
+	 */
+	const $form = $( '.paypal-donate' ).first();
+	$form.prevAll( '.wp-block-cover' ).find( '.wp-block-cover__inner-container' ).append( $form );
 
 } );
