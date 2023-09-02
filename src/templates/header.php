@@ -95,11 +95,9 @@ $header_image_class .= $header_is_rain ? ' rain-effect' : '';
 					<div class="navbar-controls">
 
 						<ul class="lang-switch">
-							<?php pll_the_languages( array(
+							<?php function_exists( 'pll_current_language' ) ? pll_the_languages( array(
 								'display_names_as'	=> 'slug',
-							) ); ?>
-						</ul>
-
+							) ) : null ; ?>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'watp' ); ?>">
 							<span class="navbar-toggler-icon"></span>
 						</button>
