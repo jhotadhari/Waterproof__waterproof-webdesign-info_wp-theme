@@ -10,12 +10,12 @@
  * @package  Waterproof__waterproof-webdesign-info_wp-theme
  */
 
-.edit-post-visual-editor.editor-styles-wrapper {
+.editor-styles-wrapper {
 
     // Bootstrap reboot
     @import "~bootstrap/scss/reboot";
     // ~bootstrap/scss/reboot -  body
-    font-family: $font-family-base;
+    font-family: $font-family-base !important;
     @include font-size($font-size-base);
     font-weight: $font-weight-base;
     line-height: $line-height-base;
@@ -45,6 +45,9 @@
             &[data-align="full"] {
                 max-width: none;
             }
+        }
+        .wp-block {
+            max-width: none;   // reset for nested blocks
         }
 
         // customize the editor title

@@ -82,6 +82,19 @@ header {
         }
 
         // &-active {
+        // &:last-child {
+        //     background-color: $primary;
+        //     &, a {
+        //         color: $white;
+        //     }
+        // }
+
+        // // Append font awesome icon
+        // &:not(:last-child):after {
+        //     // @extend .fa;
+        //     // content: unquote("\"#{ $fa-var-chevron-right }\"");
+        //     content: '>';
+        //     margin-left: map-get( $spacers, 2 );
         // }
 
     }

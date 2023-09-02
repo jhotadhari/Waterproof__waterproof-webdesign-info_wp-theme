@@ -11,8 +11,25 @@ use croox\wde;
 
 class Watp extends wde\Theme {
 
+	public function initialize() {
+
+		// // Run Updates when theme version changes.
+		// add_filter( $this->prefix . '_update_version', function( $success, $new_version, $old_version ) {
+		// 	return $success;
+		// }, 10, 3 );
+
+		// // Run Updates when theme db_version changes.
+		// add_filter( $this->prefix . '_update_db_version', function( $success, $new_db_version, $old_db_version ) {
+		// 	return $success;
+		// }, 10, 3 );
+
+		parent::initialize();
+	}
+
 	public function hooks(){
         parent::hooks();
+
+		$this->_include( 'css_properties' ); // Includes function watp_get_css_property, see watp_add_theme_support
 
         // Fix WPML global active language variable for REST Requests.
         // if ( class_exists( 'SitePress' ) ) {
@@ -32,6 +49,33 @@ class Watp extends wde\Theme {
 	// public function do_something_on_init(){
 	// 	// ...
 	// }
+
+	public function enqueue_script_editor( $screen ){
+		if ( ! is_admin() || 'post' !== $screen->base ) {
+			return;
+		}
+
+		$handle = $this->prefix . '_script_editor';
+
+		$deps = array(
+			'wp-blocks',
+			'wp-dom-ready',
+			'wp-edit-post',
+		);
+
+		// // If script contains lapo customization, enqueue it after lapo script.
+		// if ( class_exists( 'lapo\Block_Latest_Posts' ) ) {
+		// 	$deps[] = 'lapo_block_latest_posts_admin';
+		// }
+
+		$this->register_script( array(
+			'handle'		=> $handle,
+			'deps'			=> $deps,
+			'in_footer'		=> true,	// default false
+			'enqueue'		=> true,
+			// 'localize_data'	=> array(),
+		) );
+	}
 
 	public function enqueue_style_editor( $screen ){
 		if ( ! is_admin() || 'post' !== $screen->base ) {
