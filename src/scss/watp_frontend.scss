@@ -19,7 +19,7 @@
 @import "watp_frontend/fonts/fonts_master";
 
 // Load and overwrite Bootstrap variables
-@import "watp_frontend/variables_site/variables_bootstrap";
+@import "watp_frontend/variables_site/variables_site";
 
 // Loads Bootstrap4 base
 @import "~bootstrap/scss/functions";
@@ -36,8 +36,11 @@ html, body {
     overflow-x: hidden;
 }
 body {
-    font-display: swap;
     position: relative;
+}
+// remove content outline
+#content {
+    outline: 0;
 }
 
 @import "watp_frontend/frontend_master";

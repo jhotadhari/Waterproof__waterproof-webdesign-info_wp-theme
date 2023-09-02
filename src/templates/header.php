@@ -11,6 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
+	require_once( watp\Watp::get_instance()->dir_path . 'vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php' );
+}
+
 $container = get_theme_mod( 'watp_container_type' );
 
 $custom_header = get_custom_header();
@@ -62,7 +66,7 @@ $header_image_class = 'header-image';
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
 							'depth'           => 2,
-							'walker'          => new watp\WP_Bootstrap_Navwalker(),
+							'walker'          => new \WP_Bootstrap_Navwalker(),
 						)
 					); ?>
 
