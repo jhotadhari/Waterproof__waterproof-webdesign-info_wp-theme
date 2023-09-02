@@ -15,9 +15,7 @@ import $ from 'jquery';
 import './watp_script/bootstrapCustom';
 import './watp_script/skip_link_focus_fix';
 import './watp_script/theme_support_align_full';
-
-// // access localized data.
-// const localizedData = watp_script_data;
+import './watp_script/contact_hcaptcha';
 
 $( document ).ready( function( $ ) {
 

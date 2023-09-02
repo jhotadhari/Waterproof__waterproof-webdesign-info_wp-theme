@@ -43,6 +43,10 @@ class Watp extends wde\Theme {
 			Wpseo_Breadcrumb_Customize::get_instance();
 		}
 
+		if ( function_exists( 'hcaptcha' ) ) {
+			Hcaptcha_acll::init();
+		}
+
 		add_action( 'current_screen', array( $this, 'enqueue_style_editor' ), 10 );
 	}
 
@@ -93,15 +97,22 @@ class Watp extends wde\Theme {
 
 		$handle = $this->prefix . '_script';
 
+		$deps = array(
+			'jquery',
+			// 'wp-i18n',
+		);
+
+		if ( is_plugin_active( 'Croox__asset-cleaner-loader_wp-plugin/Croox__asset-cleaner-loader_wp-plugin.php' ) ) {
+			$deps[] = 'acll_loader';
+		}
+
         $this->register_script( array(
 			'handle'	=> $handle,
-			'deps'		=> array(
-				'jquery',
-				// 'wp-i18n',
-
-			),
+			'deps'		=> $deps,
 			'in_footer'	=> true,	// default false
 			'enqueue'	=> true,
+			'localize_data'	=> apply_filters( 'watp_script_localize_data', array() ),
+
 		) );
 	}
 
