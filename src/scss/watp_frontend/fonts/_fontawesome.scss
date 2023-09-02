@@ -1,84 +1,123 @@
 /**
  * Import functions
  */
- @import "~@fortawesome/fontawesome-free/scss/functions";
+@import "~@fortawesome/fontawesome-free/scss/functions";
 
- /**
-  * Overwrite and import variables
-  */
- $fa-font-path: "../fonts";
- $fa-style-family-regular: "Font Awesome 6 Free Regular";
- $fa-style-family-solid: "Font Awesome 6 Free Solid";
- $fa-style-family: $fa-style-family-solid;
- @import "~@fortawesome/fontawesome-free/scss/variables";
+/**
+ * Overwrite and import variables
+ */
+$fa-font-path: "../fonts";
+$fa-style-family-icomoon: "watp icomoon";
+$fa-style-family-regular: "Font Awesome 6 Free Regular";
+$fa-style-family-solid: "Font Awesome 6 Free Solid";
+$fa-style-family: $fa-style-family-icomoon;
+@import "~@fortawesome/fontawesome-free/scss/variables";
 
- /**
-  * Regular
-  * See node_modules/@fortawesome/fontawesome-free/scss/regular.scss
-  */
- :root, :host {
-     --#{$fa-css-prefix}-font-regular: normal 400 1em/1 "#{ $fa-style-family-regular }";
- }
+// Custom icons and custom selection.
+$fa-var-cc-custom: "\f25e";
+$fa-var-cc-by: "\e900";
+$fa-var-cc-nc: "\e901";
+$fa-var-cc-sa: "\e902";
+$fa-var-check: "\e906";
+$fa-var-chevron-right: "\e905";
+$fa-var-angle-right: "\e903";
+$fa-var-angle-left: "\e904";
+$fa-icons-custom-selection: (
+    "cc-custom": $fa-var-cc-custom,
+    "cc-by": $fa-var-cc-by,
+    "cc-nc": $fa-var-cc-nc,
+    "cc-sa": $fa-var-cc-sa,
+    "check:": $fa-var-check,
+    "chevron-right": $fa-var-chevron-right,
+    "angle-right": $fa-var-angle-right,
+    "angle-left": $fa-var-angle-left,
+);
 
- @font-face {
-     font-family: 'Font Awesome 6 Free Regular';
-     font-style: normal;
-     font-weight: 400;
-     font-display: $fa-font-display;
-     src: url('#{$fa-font-path}/fa-regular-400.woff2') format('woff2'),
-         url('#{$fa-font-path}/fa-regular-400.ttf') format('truetype');
- }
+/**
+ * watp custom icomoon
+ */
+@font-face {
+font-family: 'watp icomoon';
+font-style: normal;
+font-weight: 900;
+font-display: $fa-font-display;
+src: url('#{$fa-font-path}/icomoon/fonts/icomoon.woff2') format('woff2'),
+    url('#{$fa-font-path}/icomoon/fonts/icomoon.ttf') format('truetype');
+}
 
- .far,
- .#{$fa-css-prefix}-regular {
-     font-family: 'Font Awesome 6 Free Regular';
-     font-weight: 400;
- }
+// /**
+//  * Regular
+//  * See node_modules/@fortawesome/fontawesome-free/scss/regular.scss
+//   */
+// :root, :host {
+//     --#{$fa-css-prefix}-font-regular: normal 400 1em/1 "#{ $fa-style-family-regular }";
+// }
 
+// @font-face {
+//     font-family: 'Font Awesome 6 Free Regular';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-display: $fa-font-display;
+//     src: url('#{$fa-font-path}/fa-regular-400.woff2') format('woff2'),
+//         url('#{$fa-font-path}/fa-regular-400.ttf') format('truetype');
+// }
 
- /**
-  * Solid
-  * See node_modules/@fortawesome/fontawesome-free/scss/solid.scss
-  */
- :root, :host {
-     --#{$fa-css-prefix}-font-solid: normal 900 1em/1 "#{ $fa-style-family-solid }";
- }
-
- @font-face {
-     font-family: 'Font Awesome 6 Free Solid';
-     font-style: normal;
-     font-weight: 900;
-     font-display: $fa-font-display;
-     src: url('#{$fa-font-path}/fa-solid-900.woff2') format('woff2'),
-         url('#{$fa-font-path}/fa-solid-900.ttf') format('truetype');
- }
-
- .fas,
- .#{$fa-css-prefix}-solid {
-     font-family: 'Font Awesome 6 Free Solid';
-     font-weight: 900;
- }
+// .far,
+// .#{$fa-css-prefix}-regular {
+//     font-family: 'Font Awesome 6 Free Regular';
+//     font-weight: 400;
+// }
 
 
- /**
-  * Brands
-  * See node_modules/@fortawesome/fontawesome-free/scss/brands.scss
-  */
- @import "~@fortawesome/fontawesome-free/scss/brands";
+// /**
+//  * Solid
+//  * See node_modules/@fortawesome/fontawesome-free/scss/solid.scss
+//  */
+// :root, :host {
+//     --#{$fa-css-prefix}-font-solid: normal 900 1em/1 "#{ $fa-style-family-solid }";
+// }
+
+// @font-face {
+//     font-family: 'Font Awesome 6 Free Solid';
+//     font-style: normal;
+//     font-weight: 900;
+//     font-display: $fa-font-display;
+//     src: url('#{$fa-font-path}/fa-solid-900.woff2') format('woff2'),
+//         url('#{$fa-font-path}/fa-solid-900.ttf') format('truetype');
+// }
+
+// .fas,
+// .#{$fa-css-prefix}-solid {
+//     font-family: 'Font Awesome 6 Free Solid';
+//     font-weight: 900;
+// }
 
 
- /**
-  * Font awesome
-  * Same as node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss
-  */
- @import "~@fortawesome/fontawesome-free/scss/mixins";
- @import "~@fortawesome/fontawesome-free/scss/core";
- @import "~@fortawesome/fontawesome-free/scss/sizing";
- @import "~@fortawesome/fontawesome-free/scss/fixed-width";
- @import "~@fortawesome/fontawesome-free/scss/list";
- @import "~@fortawesome/fontawesome-free/scss/bordered-pulled";
- @import "~@fortawesome/fontawesome-free/scss/animated";
- @import "~@fortawesome/fontawesome-free/scss/rotated-flipped";
- @import "~@fortawesome/fontawesome-free/scss/stacked";
- @import "~@fortawesome/fontawesome-free/scss/icons";
- @import "~@fortawesome/fontawesome-free/scss/screen-reader";
+// /**
+//  * Brands
+//  * See node_modules/@fortawesome/fontawesome-free/scss/brands.scss
+//  */
+// @import "~@fortawesome/fontawesome-free/scss/brands";
+
+
+/**
+ * Font awesome
+ * Same as node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss
+ */
+@import "~@fortawesome/fontawesome-free/scss/mixins";
+@import "~@fortawesome/fontawesome-free/scss/core";
+@import "~@fortawesome/fontawesome-free/scss/sizing";
+// @import "~@fortawesome/fontawesome-free/scss/fixed-width";
+// @import "~@fortawesome/fontawesome-free/scss/list";
+// @import "~@fortawesome/fontawesome-free/scss/bordered-pulled";
+// @import "~@fortawesome/fontawesome-free/scss/animated";
+// @import "~@fortawesome/fontawesome-free/scss/rotated-flipped";
+// @import "~@fortawesome/fontawesome-free/scss/stacked";
+
+// Loop custom icon selection stead of all fontawesome default icons.
+// @import "~@fortawesome/fontawesome-free/scss/icons";
+@each $name, $icon in $fa-icons-custom-selection {
+    .#{$fa-css-prefix}-#{$name}:before { content: unquote("\"#{ $icon }\""); }
+}
+
+// @import "~@fortawesome/fontawesome-free/scss/screen-reader";

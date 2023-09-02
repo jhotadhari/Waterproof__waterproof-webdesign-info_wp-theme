@@ -67,19 +67,6 @@ a {
     text-decoration: underline;
 }
 
-%icon-cc {
-    &:before {
-        @extend .fa;
-        content: $fa-var-cc-custom " " $fa-var-cc-by " " $fa-var-cc-nc " " $fa-var-cc-sa;
-        color: $body-color;
-        margin-right: map-get( $spacers, 1 );
-    }
-}
-.cc {
-    @extend %icon-cc;
-}
-
-
 /**
  * Lists
  */
