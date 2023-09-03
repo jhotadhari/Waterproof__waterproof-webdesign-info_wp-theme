@@ -29,6 +29,12 @@ Upload and install this Theme the same way you'd install any other Theme.
 # 
 ## Changelog ##
 
+## 1.0.2 - 2023-09-03
+Small fix
+
+### Fixed
+- Heading blocks alignments for xs screensize
+
 ## 1.0.1 - 2023-09-03
 Prepare everything to use cf7 with hCaptcha
 
