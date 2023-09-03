@@ -1,3 +1,8 @@
 {
-  "changes": []
+  "changes": [
+    {
+      "type": "fixed",
+      "message": "Heading blocks alignments for xs screensize"
+    }
+  ]
 }
