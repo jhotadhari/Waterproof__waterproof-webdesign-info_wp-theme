@@ -15,7 +15,7 @@ include_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
 function watp_init() {
 
 	$init_args = array(
-		'version'		=> '1.0.0',
+		'version'		=> '1.0.1',
 		'slug'			=> 'Waterproof__waterproof-webdesign-info_wp-theme',
 		'name'			=> 'waterproof-webdesign Theme',
 		'prefix'		=> 'watp',
@@ -24,9 +24,9 @@ function watp_init() {
 		'FILE_CONST'	=> __FILE__,
 		'db_version'	=> 0,
 		'wde'			=> array(
-			'generator-wp-dev-env'	=> '0.14.2',
-			'wp-dev-env-grunt'		=> '0.9.7',
-			'wp-dev-env-frame'		=> '0.8.0',
+			'generator-wp-dev-env'	=> '1.6.8',
+			'wp-dev-env-grunt'		=> '1.6.2',
+			'wp-dev-env-frame'		=> '0.16.0',
 		),
 		'deps'			=> array(
 			'php_version'	=> '5.6.0',		// required php version
