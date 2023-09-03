@@ -11,6 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
+	require_once( watp\Watp::get_instance()->dir_path . 'vendor/wp-bootstrap/wp-bootstrap-navwalker/class-wp-bootstrap-navwalker.php' );
+}
+
 $container = get_theme_mod( 'watp_container_type' );
 
 $custom_header = get_custom_header();
@@ -91,11 +95,9 @@ $header_image_class .= $header_is_rain ? ' rain-effect' : '';
 					<div class="navbar-controls">
 
 						<ul class="lang-switch">
-							<?php pll_the_languages( array(
+							<?php function_exists( 'pll_current_language' ) ? pll_the_languages( array(
 								'display_names_as'	=> 'slug',
-							) ); ?>
-						</ul>
-
+							) ) : null ; ?>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'watp' ); ?>">
 							<span class="navbar-toggler-icon"></span>
 						</button>
@@ -111,7 +113,7 @@ $header_image_class .= $header_is_rain ? ' rain-effect' : '';
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
 							'depth'           => 2,
-							'walker'          => new watp\WP_Bootstrap_Navwalker(),
+							'walker'          => new \WP_Bootstrap_Navwalker(),
 						)
 					); ?>
 
