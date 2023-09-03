@@ -35,7 +35,14 @@ $the_theme = wp_get_theme();
 				sprintf(
 					esc_html__( '%s – %s', 'watp' ),
 					sprintf(
-						'<a title="%s" class="cc" href="%s">%s</a>',
+						'<a title="%s" href="%s">' . implode( '', array_map( function( $icon_var ) {
+							return '<i class="fa ' . $icon_var . ' mr-1 text-body"></i>';
+						}, array(
+							'fa-cc-custom',
+							'fa-cc-by',
+							'fa-cc-nc',
+							'fa-cc-sa',
+						) ) ) . '%s</a>',
 						sprintf(
 							esc_html__( 'Creative Commons, Attribution (BY), Non-commercial (NC), Share-alike (SA), %s', 'watp' ),
 							get_bloginfo('name')

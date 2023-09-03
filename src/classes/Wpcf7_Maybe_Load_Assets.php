@@ -22,7 +22,6 @@ class Wpcf7_Maybe_Load_Assets {
 	public function hooks() {
 		add_filter( 'wpcf7_load_js', array( $this, 'maybe_load_assets' ) );
 		add_filter( 'wpcf7_load_css', array( $this, 'maybe_load_assets' ) );
-		add_action( 'wp', array( $this, 'maybe_remove_recaptcha' ) );
 		// add_action( 'wp_footer', array( $this, 'hide_recaptcha_anchor' ), 100 );
 	}
 
@@ -31,7 +30,7 @@ class Wpcf7_Maybe_Load_Assets {
 	 *
 	 * @return boolean
 	 */
-	protected function is_contact_page() {
+	public function is_contact_page() {
 		global $post;
 
 		// contact page slugs
@@ -54,31 +53,5 @@ class Wpcf7_Maybe_Load_Assets {
 	public function maybe_load_assets( $load ) {
 		return $this->is_contact_page() ? $load : false;
 	}
-
-	/**
-	 * hide recaptcha anchor
-	 *
-	 * not allowed to hide! https://policies.google.com/terms?hl=en
-	 */
-	public function hide_recaptcha_anchor() {
-		if ( $this->is_contact_page() ) {
-			echo '<style type="text/css">.grecaptcha-badge { display: none !important; }</style>';
-		}
-	}
-
-	/**
-	 * removes recaptcha enqueue action/filters
-	 */
-	public function maybe_remove_recaptcha() {
-		if ( ! $this->is_contact_page() ) {
-			remove_filter( 'wpcf7_form_hidden_fields', 'wpcf7_recaptcha_add_hidden_fields', 100 );
-			remove_filter( 'wpcf7_spam', 'wpcf7_recaptcha_verify_response', 9 );
-			remove_action( 'wpcf7_init', 'wpcf7_recaptcha_register_service', 10 );
-			remove_action( 'wp_enqueue_scripts', 'wpcf7_recaptcha_enqueue_scripts', 10 );
-			remove_action( 'wp_footer', 'wpcf7_recaptcha_onload_script', 40 );
-			remove_action( 'wpcf7_init', 'wpcf7_recaptcha_add_form_tag_recaptcha', 10 );
-		}
-	}
-
 
 }
