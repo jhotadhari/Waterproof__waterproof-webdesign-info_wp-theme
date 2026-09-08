@@ -29,6 +29,16 @@ Upload and install this Theme the same way you'd install any other Theme.
 # 
 ## Changelog ##
 
+## 1.0.3 - 2026-09-08
+Update to current stack and PHP 8.2
+
+### Changed
+- Updated to wp-dev-env-frame#0.17.1 and wp-dev-env-grunt#1.7.2
+- PHP 8.2 compatibility (frame 0.17.1)
+
+## 1.0.3 - 2026-09-08
+Update deps, PHP 8.2 compat
+
 ## 1.0.2 - 2023-09-03
 Small fix
 
