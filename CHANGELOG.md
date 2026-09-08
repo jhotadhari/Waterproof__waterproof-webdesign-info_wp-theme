@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.4 - 2026-09-08
+Fix hCaptcha 5.x compatibility
+
+### Fixed
+- hCaptcha 5.x: pass the HCaptchaMainObject config inline (extracted from the
+  buffered print_footer_scripts output) to the lazy-loaded hcaptcha script,
+  and call hCaptchaBindEvents() after the consent-gated assets are loaded.
+  The consent checkbox on the kontakt form now loads the captcha again.
+
+## 1.0.4 - 2026-09-08
+Fix hCaptcha 5.x compatibility
+
 ## 1.0.3 - 2026-09-08
 Update to current stack and PHP 8.2
 

@@ -45,6 +45,23 @@ class Hcaptcha_acll {
         $hcaptcha->print_footer_scripts();
         $out = ob_get_clean();
 
+        // Since hCaptcha 5.x, the buffered output contains the HCaptchaMainObject
+        // config inline script, which the hcaptcha app script needs to render
+        // the widgets. It also contains a delayed api.js loader, which we don't
+        // want, because we load api.js ourselves via acll.
+        // Extract only the config inline and run it right before the hcaptcha
+        // script loads.
+        $config_inline = '';
+        if ( preg_match_all( '#<script[^>]*>(.*?)</script>#s', $out, $matches ) ) {
+            $config_inline = implode( "\n", array_filter( $matches[1], function( $js ) {
+                return false !== strpos( $js, 'HCaptchaMainObject' );
+            } ) );
+        }
+
+        if ( $config_inline && wp_script_is( \HCaptcha\Main::HANDLE, 'registered' ) ) {
+            wp_add_inline_script( \HCaptcha\Main::HANDLE, $config_inline, 'before' );
+        }
+
         // Register the script that hcaptcha would load by the stopped inline script.
         wp_register_script(
 			self::$handle,

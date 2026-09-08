@@ -18,6 +18,13 @@ $( document ).ready( function( $ ) {
 					scripts: window.watp_script_data.hcaptcha_scripts,
 				} ).then( () => {
 					loaded = true;
+					// Since hCaptcha 5.x, the hcaptcha-cf7.js script calls
+					// hCaptchaBindEvents() right at page load, but the app
+					// script that defines it is only loaded now (consent
+					// gated). Bind the forms after the assets are loaded.
+					if ( window.hCaptchaBindEvents ) {
+						window.hCaptchaBindEvents();
+					}
 				} );
 			}
 		};
