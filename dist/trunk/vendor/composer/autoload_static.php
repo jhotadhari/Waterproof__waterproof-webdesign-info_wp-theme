@@ -170,9 +170,8 @@ class ComposerStaticInit0ca529fcbb39af80b6e815a3a2f5ac09
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit0ca529fcbb39af80b6e815a3a2f5ac09::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit0ca529fcbb39af80b6e815a3a2f5ac09::$prefixDirsPsr4;
-            if ( function_exists( "is_plugin_active" )
-              && false === strpos( __DIR__, "Croox__wp-dev-env-frame-loader_wp-plugin" )
-            	&& is_plugin_active( "Croox__wp-dev-env-frame-loader_wp-plugin/Croox__wp-dev-env-frame-loader_wp-plugin.php" )
+            if ( false === strpos( __DIR__, "Croox__wp-dev-env-frame-loader_wp-plugin" )
+            	&& class_exists( "croox\wde\Project", false )
             ) {
             	$loader->classMap = array_filter( ComposerStaticInit0ca529fcbb39af80b6e815a3a2f5ac09::$classMap, function( $path ) {
             		return false === strpos( $path, "croox/wp-dev-env-frame" );
