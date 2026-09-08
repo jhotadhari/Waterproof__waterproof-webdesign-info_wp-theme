@@ -14,7 +14,7 @@ Fix hCaptcha 5.x compatibility
   The consent checkbox on the kontakt form now loads the captcha again.
 
 ## 1.0.3 - 2026-09-08
-Update to current stack and PHP 8.2
+Update deps, PHP 8.2 compat
 
 ### Changed
 - Updated to wp-dev-env-frame#0.17.1 and wp-dev-env-grunt#1.7.2
